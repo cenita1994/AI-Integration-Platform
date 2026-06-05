@@ -1,0 +1,123 @@
+/* ==================================================
+   AI INTEGRATION PLATFORM
+   Custom CSS
+   Bootstrap handles most of the design
+================================================== */
+
+/* ==================================================
+   GLOBAL
+================================================== */
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+
+  background-color: #f8f9fa;
+
+  margin: 0;
+}
+
+/* ==================================================
+   APPLICATION LAYOUT
+================================================== */
+
+.layout {
+  display: flex;
+
+  width: 100%;
+}
+
+/* ==================================================
+   SIDEBAR
+================================================== */
+
+.sidebar {
+  width: 280px;
+
+  min-width: 280px;
+
+  max-width: 280px;
+
+  height: 100vh;
+
+  position: sticky;
+
+  top: 0;
+
+  overflow-y: auto;
+}
+
+/* Sidebar Main Links */
+
+.sidebar-link {
+  display: flex;
+
+  align-items: center;
+
+  text-decoration: none;
+
+  border-radius: 8px;
+
+  transition: 0.2s;
+}
+
+.sidebar-link:hover {
+  background-color: #f1f5f9;
+}
+
+/* Dropdown items */
+
+.sidebar-submenu a {
+  display: block;
+
+  text-decoration: none;
+
+  padding: 8px 10px 8px 35px;
+
+  border-radius: 6px;
+
+  transition: 0.2s;
+}
+
+.sidebar-submenu a:hover {
+  background-color: #f8f9fa;
+}
+
+/* ==================================================
+   RIGHT SIDE CONTENT AREA
+================================================== */
+
+.main-area {
+  flex: 1;
+
+  min-width: 0;
+}
+
+/* ==================================================
+   MAIN CONTENT
+================================================== */
+
+.content {
+  min-height: calc(100vh - 56px);
+
+  overflow-x: hidden;
+}
+
+/* ==================================================
+   DASHBOARD CARDS
+================================================== */
+
+.card {
+  transition: 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+}
+
+/* ==================================================
+   IMAGE DESIGN
+================================================== */
+
+.object-fit-cover {
+  object-fit: cover;
+}

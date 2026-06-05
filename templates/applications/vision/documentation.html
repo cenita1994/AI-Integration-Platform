@@ -1,0 +1,415 @@
+{% extends "base.html" %} {% block title %} Cat vs Dog Image Classification
+Documentation {% endblock %} {% block content %}
+
+<!-- ================= HERO SECTION ================= -->
+
+<section class="container py-5">
+  <div class="row align-items-center">
+    <div class="col-md-6">
+      <h1 class="fw-bold">Cat vs Dog Image Classification</h1>
+
+      <p class="lead mt-3">
+        An Artificial Intelligence application that utilizes Computer Vision and
+        Deep Learning techniques to classify images of cats and dogs using a
+        Convolutional Neural Network model.
+      </p>
+
+      <p>
+        The system combines image preprocessing, transfer learning using
+        MobileNetV2 CNN architecture, Flask web integration, and AI-based
+        interpretation to provide understandable prediction results.
+      </p>
+
+      <span class="badge bg-primary"> Computer Vision </span>
+
+      <span class="badge bg-success"> Deep Learning </span>
+
+      <span class="badge bg-warning text-dark"> CNN Model </span>
+    </div>
+
+    <div class="col-md-6 text-center">
+      <img
+        src="{{ url_for('static',
+            filename='images/vision3.jpeg') }}"
+        class="img-fluid rounded shadow"
+        alt="Computer Vision"
+      />
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROJECT OVERVIEW ================= -->
+
+<section class="container py-5">
+  <h2 class="fw-bold mb-4">Project Overview</h2>
+
+  <div class="card shadow p-4">
+    <p>
+      This project demonstrates the implementation of an AI-powered image
+      classification system capable of identifying whether an uploaded image
+      belongs to a cat or dog category.
+    </p>
+
+    <p>
+      The development process follows a machine learning workflow, starting from
+      dataset preparation, model training, evaluation, deployment, and
+      integration into a web-based prediction system.
+    </p>
+
+    <h5 class="mt-3">Technologies Used:</h5>
+
+    <ul>
+      <li>Python Programming Language</li>
+
+      <li>TensorFlow and Keras Deep Learning Framework</li>
+
+      <li>MobileNetV2 Transfer Learning Model</li>
+
+      <li>Orange Data Mining for Visual AI Workflow</li>
+
+      <li>Flask Web Framework</li>
+
+      <li>Gemini AI for Prediction Explanation</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= DATASET SECTION ================= -->
+
+<section class="container py-5">
+  <div class="row align-items-center">
+    <div class="col-md-6">
+      <h2 class="fw-bold">Dataset Preparation</h2>
+
+      <p>
+        The dataset contains labeled images of cats and dogs that were organized
+        into separate classes for supervised image classification.
+      </p>
+
+      <div class="card p-3 shadow-sm">
+        <h5>Dataset Summary</h5>
+
+        <table class="table">
+          <tr>
+            <th>Dataset</th>
+            <th>Total Images</th>
+          </tr>
+
+          <tr>
+            <td>Training Images</td>
+            <td>1002 Images</td>
+          </tr>
+
+          <tr>
+            <td>Validation Images</td>
+            <td>200 Images</td>
+          </tr>
+        </table>
+
+        <h6>Class Mapping:</h6>
+
+        <ul>
+          <li>Cat → 0</li>
+          <li>Dog → 1</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-md-6 text-center">
+      <img
+        src="{{ url_for('static',
+filename='images/dataset3.jpeg') }}"
+        class="img-fluid rounded shadow"
+        alt="Dataset"
+      />
+    </div>
+  </div>
+</section>
+
+<!-- ================= ORANGE DATA MINING ================= -->
+
+<section class="container py-5">
+  <h2 class="fw-bold mb-4">Orange Data Mining Workflow</h2>
+
+  <div class="row align-items-center">
+    <div class="col-md-6">
+      <img
+        src="{{ url_for('static',
+filename='images/orange_workflow3.jpeg') }}"
+        class="img-fluid rounded shadow"
+        alt="Orange Workflow"
+      />
+    </div>
+
+    <div class="col-md-6">
+      <p>
+        Orange Data Mining was used as a visual machine learning environment to
+        demonstrate the process of image loading, feature extraction, model
+        evaluation, and prediction.
+      </p>
+
+      <p>
+        The workflow provides an interactive representation of the image
+        classification pipeline without manually coding every machine learning
+        process.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= GOOGLE COLAB TRAINING ================= -->
+
+<section class="container py-5">
+  <div class="row align-items-center">
+    <div class="col-md-6">
+      <h2 class="fw-bold">Model Training Using Google Colab</h2>
+
+      <p>
+        The deep learning model was developed and trained using Google Colab
+        with TensorFlow and Keras libraries.
+      </p>
+
+      <p>
+        Google Colab provides cloud-based GPU resources that allow efficient
+        training of convolutional neural networks.
+      </p>
+    </div>
+
+    <div class="col-md-6 text-center">
+      <img
+        src="{{ url_for('static',
+filename='images/colab3.jpeg') }}"
+        class="img-fluid rounded shadow"
+        alt="Google Colab Training"
+      />
+    </div>
+  </div>
+</section>
+
+<!-- ================= MODEL SECTION ================= -->
+
+<section class="container py-5">
+  <h2 class="fw-bold">MobileNetV2 CNN Model Architecture</h2>
+
+  <div class="card shadow p-4">
+    <p>
+      The classification model uses MobileNetV2, a lightweight Convolutional
+      Neural Network architecture designed for efficient image recognition
+      tasks.
+    </p>
+
+    <p>
+      Through transfer learning, the model utilizes previously learned visual
+      features and adapts them for the classification of cat and dog images.
+    </p>
+
+    <h5>Model Configuration</h5>
+
+    <ul>
+      <li>Base Model: MobileNetV2</li>
+
+      <li>Learning Approach: Transfer Learning</li>
+
+      <li>Classification Type: Binary Classification</li>
+
+      <li>Output Classes: Cat and Dog</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= SYSTEM ARCHITECTURE ================= -->
+
+<section class="container py-5">
+  <h2 class="fw-bold mb-4">System Architecture and Prediction Flow</h2>
+
+  <div class="row align-items-center">
+    <div class="col-md-6 text-center">
+      <img
+        src="{{ url_for('static',
+filename='images/architecture3.jpeg') }}"
+        class="img-fluid rounded shadow"
+        alt="CNN Architecture"
+      />
+    </div>
+
+    <div class="col-md-6">
+      <p>
+        The system follows a complete computer vision pipeline where the
+        uploaded image is processed before being analyzed by the trained deep
+        learning model.
+      </p>
+
+      <div class="card shadow-sm p-4">
+        <h5>Prediction Workflow</h5>
+
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">1. User Image Upload</li>
+
+          <li class="list-group-item">2. Image Preprocessing</li>
+
+          <li class="list-group-item">3. MobileNetV2 CNN Model Analysis</li>
+
+          <li class="list-group-item">4. Cat or Dog Prediction</li>
+
+          <li class="list-group-item">5. Confidence Score Generation</li>
+
+          <li class="list-group-item">6. Gemini AI Interpretation</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PERFORMANCE RESULT ================= -->
+
+<section class="container py-5">
+  <h2 class="fw-bold mb-4">Model Performance Evaluation</h2>
+
+  <p>
+    After training and validation, the MobileNetV2 model achieved high
+    classification performance in identifying cat and dog images.
+  </p>
+
+  <div class="row text-center mt-4">
+    <div class="col-md-4">
+      <div class="card shadow p-4">
+        <h3 class="fw-bold">98.50%</h3>
+
+        <p>Final Accuracy</p>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card shadow p-4">
+        <h3 class="fw-bold">0.0701</h3>
+
+        <p>Final Loss</p>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card shadow p-4">
+        <h3 class="fw-bold">CNN</h3>
+
+        <p>Deep Learning Model</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card mt-4 p-4 shadow-sm">
+    <h5>Training Result Summary</h5>
+
+    <table class="table">
+      <tr>
+        <th>Metric</th>
+
+        <th>Result</th>
+      </tr>
+
+      <tr>
+        <td>Model</td>
+
+        <td>MobileNetV2</td>
+      </tr>
+
+      <tr>
+        <td>Classification Task</td>
+
+        <td>Cat and Dog Image Classification</td>
+      </tr>
+
+      <tr>
+        <td>Accuracy</td>
+
+        <td>98.50%</td>
+      </tr>
+
+      <tr>
+        <td>Loss</td>
+
+        <td>0.0701</td>
+      </tr>
+    </table>
+  </div>
+</section>
+
+<!-- ================= SAMPLE PREDICTION ================= -->
+
+<section class="container py-5">
+  <h2 class="fw-bold mb-4">Sample Image Prediction</h2>
+
+  <div class="row align-items-center">
+    <div class="col-md-6">
+      <p>
+        The trained CNN model was integrated into a Flask web application where
+        users can upload an image and receive an AI-generated classification
+        result.
+      </p>
+
+      <div class="card shadow p-4">
+        <h5>Example Output</h5>
+
+        <ul>
+          <li>Uploaded Image: Animal Image</li>
+
+          <li>Predicted Category: Cat / Dog</li>
+
+          <li>Prediction Confidence: Generated by CNN Model</li>
+
+          <li>AI Explanation: Generated using Gemini AI</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-md-6 text-center">
+      <img
+        src="{{ url_for('static',
+filename='images/sample_prediction.jpeg') }}"
+        class="img-fluid rounded shadow"
+        alt="Sample Prediction"
+      />
+    </div>
+  </div>
+</section>
+
+<!-- ================= AI INTERPRETATION ================= -->
+
+<section class="container py-5">
+  <h2 class="fw-bold">AI-Based Interpretation</h2>
+
+  <div class="card shadow p-4">
+    <p>
+      Aside from displaying the prediction result, the system integrates Gemini
+      Artificial Intelligence to generate a human-readable interpretation of the
+      classification output.
+    </p>
+
+    <p>
+      This feature improves user understanding by explaining why the model
+      identified the uploaded image as a cat or dog, making the prediction
+      result more informative and interactive.
+    </p>
+  </div>
+</section>
+
+<!-- ================= CONCLUSION ================= -->
+
+<section class="container py-5">
+  <div class="card shadow p-5 text-center">
+    <h2 class="fw-bold">Conclusion</h2>
+
+    <p class="mt-3">
+      The Cat vs Dog Image Classification System demonstrates how computer
+      vision, deep learning, and artificial intelligence can be integrated into
+      a web-based application.
+    </p>
+
+    <p>
+      Using MobileNetV2 CNN architecture and transfer learning, the system
+      achieved accurate image classification while providing understandable
+      AI-generated explanations.
+    </p>
+  </div>
+</section>
+
+{% endblock %}

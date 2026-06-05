@@ -1,0 +1,289 @@
+{% extends "base.html" %} {% block content %}
+
+<!-- HERO SECTION -->
+<section class="container-fluid py-5">
+  <div class="row align-items-center g-5">
+    <div class="col-md-6">
+      <span class="badge bg-primary mb-3"> Machine Learning Paradigms </span>
+
+      <h1 class="fw-bold display-5">Supervised Learning</h1>
+
+      <h4 class="text-primary mb-3">
+        Learning from Examples to Make Intelligent Predictions
+      </h4>
+
+      <p class="lead text-muted">
+        Supervised Learning is a type of Machine Learning where computers learn
+        from labeled data. The system is trained using examples that already
+        contain the correct answers, allowing the model to recognize patterns
+        and make accurate predictions on new information.
+      </p>
+
+      <a href="#what-is-supervised" class="btn btn-primary btn-lg mt-3">
+        Explore Supervised Learning
+      </a>
+    </div>
+
+    <div class="col-md-6">
+      <img
+        src="{{ url_for('static', filename='images/ai12.jpeg') }}"
+        class="img-fluid rounded-4 shadow"
+        alt="Supervised Learning"
+      />
+    </div>
+  </div>
+</section>
+
+<!-- WHAT IS SUPERVISED -->
+<section id="what-is-supervised" class="container-fluid py-5">
+  <div class="row align-items-center g-5">
+    <div class="col-md-5">
+      <img
+        src="{{ url_for('static', filename='images/ai13.jpeg') }}"
+        class="img-fluid rounded-4 shadow-sm"
+      />
+    </div>
+
+    <div class="col-md-7">
+      <h2 class="fw-bold mb-3">What is Supervised Learning?</h2>
+
+      <p class="fs-5 text-muted">
+        Supervised Learning works like a student learning with a teacher. The
+        machine receives training data containing both input information and the
+        expected result.
+      </p>
+
+      <p class="fs-5 text-muted">
+        By studying these examples, the model learns the relationship between
+        data and outcomes. After training, the model can analyze new information
+        and predict the most likely result.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- HOW SUPERVISED LEARNING WORKS -->
+<section class="container-fluid py-5">
+  <h2 class="fw-bold text-center mb-5">The Supervised Learning Process</h2>
+
+  <div class="row align-items-center g-5">
+    <div class="col-md-6">
+      <div class="alert alert-primary text-center fw-semibold">
+        Labeled Data → Training Algorithm → Machine Learning Model → Prediction
+        → Evaluation
+      </div>
+
+      <div class="list-group shadow-sm">
+        <div class="list-group-item">
+          <strong>Labeled Dataset</strong>
+
+          <br />
+
+          Data contains examples with known answers or categories.
+        </div>
+
+        <div class="list-group-item">
+          <strong>Training Phase</strong>
+
+          <br />
+
+          The algorithm studies patterns between inputs and outputs.
+        </div>
+
+        <div class="list-group-item">
+          <strong>Model Creation</strong>
+
+          <br />
+
+          A trained model is created based on discovered relationships.
+        </div>
+
+        <div class="list-group-item">
+          <strong>Prediction Phase</strong>
+
+          <br />
+
+          The model analyzes new data and provides predictions.
+        </div>
+
+        <div class="list-group-item">
+          <strong>Evaluation</strong>
+
+          <br />
+
+          The prediction result is measured to check model accuracy.
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <img
+        src="{{ url_for('static', filename='images/ai14.jpeg') }}"
+        class="img-fluid rounded-4 shadow-sm"
+      />
+    </div>
+  </div>
+</section>
+
+<!-- TYPES OF SUPERVISED LEARNING -->
+<section class="container-fluid py-5">
+  <h2 class="fw-bold text-center mb-5">Types of Supervised Learning</h2>
+
+  <div class="row g-4">
+    <!-- CLASSIFICATION -->
+
+    <div class="col-md-6">
+      <div class="card h-100 border-0 shadow-sm rounded-4">
+        <div class="card-body p-4">
+          <div class="fs-1">🏷</div>
+
+          <h3 class="fw-bold">Classification</h3>
+
+          <p class="text-muted">
+            Classification predicts categories or classes from data. The model
+            chooses which group the information belongs to.
+          </p>
+
+          <ul>
+            <li>Email → Spam or Not Spam</li>
+
+            <li>Medical Result → Positive or Negative</li>
+
+            <li>Image → Cat or Dog</li>
+
+            <li>Sentiment → Positive, Neutral, Negative</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- REGRESSION -->
+
+    <div class="col-md-6">
+      <div class="card h-100 border-0 shadow-sm rounded-4">
+        <div class="card-body p-4">
+          <div class="fs-1">📈</div>
+
+          <h3 class="fw-bold">Regression</h3>
+
+          <p class="text-muted">
+            Regression predicts continuous numerical values based on existing
+            information.
+          </p>
+
+          <ul>
+            <li>House Price Prediction</li>
+
+            <li>Sales Forecasting</li>
+
+            <li>Temperature Prediction</li>
+
+            <li>Student Performance Prediction</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ALGORITHMS -->
+<section class="container-fluid py-5">
+  <h2 class="fw-bold mb-4">Common Supervised Learning Algorithms</h2>
+
+  <div class="row g-4">
+    {% for group, algorithms in { "Decision-Based Algorithms": ["Decision
+    Tree","Random Forest"], "Statistical Algorithms": ["Linear
+    Regression","Logistic Regression"], "Distance-Based Algorithms": ["K-Nearest
+    Neighbors (KNN)"], "Advanced Algorithms": ["Support Vector Machine
+    (SVM)","Neural Networks"] }.items() %}
+
+    <div class="col-md-3">
+      <div class="card h-100 border-0 shadow-sm rounded-4">
+        <div class="card-body">
+          <h5 class="fw-bold text-primary">{{ group }}</h5>
+
+          {% for algorithm in algorithms %}
+
+          <p>✓ {{ algorithm }}</p>
+
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+    {% endfor %}
+  </div>
+</section>
+
+<!-- EXAMPLE -->
+<section class="container-fluid py-5">
+  <div class="card border-0 shadow-sm rounded-4">
+    <div class="card-body p-5">
+      <h2 class="fw-bold">Student Performance Prediction Example</h2>
+
+      <p class="text-muted fs-5">
+        A machine learning model learns from previous student records.
+      </p>
+
+      <div class="row">
+        <div class="col-md-6">
+          <h5>Input Data</h5>
+
+          <ul>
+            <li>Attendance</li>
+
+            <li>Grades</li>
+
+            <li>Activities</li>
+
+            <li>Study Hours</li>
+          </ul>
+        </div>
+
+        <div class="col-md-6">
+          <h5>Output Prediction</h5>
+
+          <div class="alert alert-success">→ Passed or Failed</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APPLICATIONS -->
+<section class="container-fluid py-5">
+  <h2 class="fw-bold text-center mb-5">Applications of Supervised Learning</h2>
+
+  <div class="row g-3 text-center">
+    {% for item in [ "📧 Email Spam Detection", "🏥 Disease Prediction", "🏦
+    Fraud Detection", "🛒 Customer Behavior Prediction", "📊 Business
+    Forecasting", "🌱 Plant Disease Classification", "😊 Sentiment
+    Classification" ] %}
+
+    <div class="col-md-3">
+      <div class="card border-0 shadow-sm rounded-4">
+        <div class="card-body fw-semibold">{{ item }}</div>
+      </div>
+    </div>
+
+    {% endfor %}
+  </div>
+</section>
+
+<!-- CLOSING -->
+<section class="container-fluid py-5">
+  <div class="card border-0 shadow-sm rounded-4">
+    <div class="card-body p-5 text-center">
+      <h2 class="fw-bold">Learning Through Guidance</h2>
+
+      <p class="fs-5 text-muted">
+        Supervised Learning helps machines become intelligent by learning from
+        previous examples. By understanding patterns from labeled data,
+        computers can support decision-making and create accurate predictions
+        for real-world problems.
+      </p>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

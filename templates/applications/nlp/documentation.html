@@ -1,0 +1,470 @@
+{% extends "base.html" %} {% block content %}
+
+<!-- ==========================================
+     HERO SECTION
+========================================== -->
+
+<div class="container-fluid">
+  <div class="row align-items-center mb-5">
+    <div class="col-md-6">
+      <h1 class="fw-bold text-primary">Natural Language Processing</h1>
+
+      <h3>Twitter Sentiment Analysis Using Machine Learning</h3>
+
+      <p class="lead mt-3">
+        This project demonstrates how Natural Language Processing (NLP) and
+        Machine Learning can analyze text data and identify user emotions,
+        opinions, and feedback.
+      </p>
+
+      <p>The system classifies Twitter text into three sentiment categories:</p>
+
+      <ul>
+        <li>Positive Sentiment</li>
+
+        <li>Neutral Sentiment</li>
+
+        <li>Negative Sentiment</li>
+      </ul>
+    </div>
+
+    <div class="col-md-6 text-center">
+      <img
+        src="{{ url_for('static', filename='images/nlp1.jpeg') }}"
+        class="img-fluid rounded shadow"
+      />
+    </div>
+  </div>
+
+  <!-- ==========================================
+     PROJECT RESOURCES
+========================================== -->
+
+  <div class="card shadow-sm border-0 mb-5">
+    <div class="card-body">
+      <h3 class="fw-bold">Project Resources</h3>
+
+      <p>
+        The following resources were used during the development, training, and
+        implementation of the sentiment analysis system.
+      </p>
+
+      <a
+        href="https://drive.google.com/drive/folders/1uOuVbTtkxHvMUjpmlyd1cCOxNHWh05SD?usp=sharing"
+        target="_blank"
+        class="btn btn-primary me-2"
+      >
+        Google Drive Files
+      </a>
+
+      <a
+        href="https://colab.research.google.com/drive/10GnZ7aS98f8hCXR-m1_S5m1mIr_zwVEr?usp=sharing"
+        target="_blank"
+        class="btn btn-success me-2"
+      >
+        Google Colab Notebook
+      </a>
+
+      <a
+        href="https://orangedatamining.com/"
+        target="_blank"
+        class="btn btn-warning"
+      >
+        Orange Data Mining
+      </a>
+
+      <hr />
+
+      <h5>Included Files:</h5>
+
+      <ul>
+        <li>train.csv - Twitter sentiment dataset</li>
+
+        <li>twitter.ows - Orange Data Mining workflow</li>
+
+        <li>sentiment_model.pkl - trained Logistic Regression model</li>
+
+        <li>tfidf_vectorizer.pkl - text feature extraction model</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ==========================================
+     DATASET SECTION
+========================================== -->
+
+  <div class="row align-items-center mb-5">
+    <div class="col-md-6">
+      <img
+        src="{{ url_for('static', filename='images/dataset2.jpeg') }}"
+        class="img-fluid rounded shadow"
+      />
+    </div>
+
+    <div class="col-md-6">
+      <h3 class="fw-bold">Dataset Description</h3>
+
+      <p>
+        The dataset used in this project contains Twitter text data labeled
+        according to user sentiment. Each record contains a text statement and
+        its corresponding sentiment classification.
+      </p>
+
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Sentiment</th>
+
+            <th>Number of Records</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>Neutral</td>
+
+            <td>11,118</td>
+          </tr>
+
+          <tr>
+            <td>Positive</td>
+
+            <td>8,582</td>
+          </tr>
+
+          <tr>
+            <td>Negative</td>
+
+            <td>7,781</td>
+          </tr>
+
+          <tr class="fw-bold">
+            <td>Total</td>
+
+            <td>27,481 Tweets</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>
+        The dataset allows the machine learning model to learn different
+        language patterns, emotions, and expressions commonly found in online
+        text communication.
+      </p>
+    </div>
+  </div>
+
+  <!-- ==========================================
+     KDD PROCESS
+========================================== -->
+
+  <div class="card shadow-sm border-0 mb-5">
+    <div class="card-body">
+      <h3 class="fw-bold">Knowledge Discovery in Databases (KDD) Process</h3>
+
+      <p>
+        The development followed the KDD methodology to transform raw text data
+        into meaningful sentiment knowledge.
+      </p>
+
+      <div class="text-center">
+        <img
+          src="{{ url_for('static', filename='images/kdd3.jpeg') }}"
+          class="img-fluid rounded shadow"
+        />
+      </div>
+
+      <div class="mt-4">
+        <ol>
+          <li>
+            <strong>Data Selection:</strong>
+            Twitter text dataset was collected.
+          </li>
+
+          <li>
+            <strong>Data Preprocessing:</strong>
+            Text cleaning and preparation were performed.
+          </li>
+
+          <li>
+            <strong>Data Transformation:</strong>
+            Text data was converted into numerical features using TF-IDF.
+          </li>
+
+          <li>
+            <strong>Data Mining:</strong>
+            Machine Learning algorithms were applied for sentiment
+            classification.
+          </li>
+
+          <li>
+            <strong>Evaluation:</strong>
+            Model performance was compared using different evaluation metrics.
+          </li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+     ORANGE DATA MINING
+========================================== -->
+
+  <div class="row align-items-center mb-5">
+    <div class="col-md-6">
+      <h3 class="fw-bold">Orange Data Mining Workflow</h3>
+
+      <p>
+        Orange Data Mining was used to visually design and evaluate the Natural
+        Language Processing workflow.
+      </p>
+
+      <p>
+        The text data was processed using feature extraction techniques and
+        evaluated using multiple machine learning algorithms.
+      </p>
+
+      <ul>
+        <li>Naive Bayes</li>
+
+        <li>Support Vector Machine</li>
+
+        <li>Random Forest</li>
+
+        <li>Logistic Regression</li>
+      </ul>
+    </div>
+
+    <div class="col-md-6">
+      <img
+        src="{{ url_for('static', filename='images/orange_workflow2.jpeg') }}"
+        class="img-fluid rounded shadow"
+      />
+    </div>
+  </div>
+  <!-- ==========================================
+     MODEL EVALUATION RESULTS
+========================================== -->
+
+  <div class="card shadow-sm border-0 mb-5">
+    <div class="card-body">
+      <h3 class="fw-bold">Machine Learning Model Evaluation Results</h3>
+
+      <p>
+        Several machine learning algorithms were evaluated to determine the most
+        suitable model for Twitter sentiment classification. The models were
+        compared using AUC, Classification Accuracy, F1 Score, Precision,
+        Recall, and MCC.
+      </p>
+
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>Model</th>
+
+              <th>AUC</th>
+
+              <th>CA</th>
+
+              <th>F1</th>
+
+              <th>Precision</th>
+
+              <th>Recall</th>
+
+              <th>MCC</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>Naive Bayes</td>
+
+              <td>0.6999</td>
+
+              <td>0.5150</td>
+
+              <td>0.5152</td>
+
+              <td>0.5248</td>
+
+              <td>0.5150</td>
+
+              <td>0.2759</td>
+            </tr>
+
+            <tr>
+              <td>SVM</td>
+
+              <td>0.6774</td>
+
+              <td>0.4260</td>
+
+              <td>0.3837</td>
+
+              <td>0.4824</td>
+
+              <td>0.4260</td>
+
+              <td>0.1858</td>
+            </tr>
+
+            <tr>
+              <td>Random Forest</td>
+
+              <td>0.7152</td>
+
+              <td>0.5515</td>
+
+              <td>0.5386</td>
+
+              <td>0.5837</td>
+
+              <td>0.5515</td>
+
+              <td>0.3216</td>
+            </tr>
+
+            <tr class="table-success fw-bold">
+              <td>Logistic Regression</td>
+
+              <td>0.7616</td>
+
+              <td>0.5865</td>
+
+              <td>0.5768</td>
+
+              <td>0.6255</td>
+
+              <td>0.5865</td>
+
+              <td>0.3790</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4 class="fw-bold mt-4">Selected Model: Logistic Regression</h4>
+
+      <p>
+        Logistic Regression achieved the strongest overall performance among the
+        evaluated algorithms. It obtained the highest AUC, Classification
+        Accuracy, Precision, F1 Score, and MCC values.
+      </p>
+
+      <p>
+        The result indicates that Logistic Regression provided the best balance
+        between correct classification and reliability in identifying positive,
+        neutral, and negative text sentiments.
+      </p>
+    </div>
+  </div>
+
+  <!-- ==========================================
+     GOOGLE COLAB IMPLEMENTATION
+========================================== -->
+
+  <div class="row align-items-center mb-5">
+    <div class="col-md-6">
+      <img
+        src="{{ url_for('static', filename='images/colab2.jpeg') }}"
+        class="img-fluid rounded shadow"
+      />
+    </div>
+
+    <div class="col-md-6">
+      <h3 class="fw-bold">Google Colab Model Development</h3>
+
+      <p>
+        Google Colab was used to develop and export the final machine learning
+        model used by the web application.
+      </p>
+
+      <p>
+        The text data was converted into numerical features using TF-IDF
+        Vectorization before training the Logistic Regression classification
+        model.
+      </p>
+
+      <h5>Generated Files:</h5>
+
+      <ul>
+        <li>
+          <strong>tfidf_vectorizer.pkl</strong>
+          - converts text into numerical features
+        </li>
+
+        <li>
+          <strong>sentiment_model.pkl</strong>
+          - predicts sentiment classification
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ==========================================
+     SYSTEM ARCHITECTURE
+========================================== -->
+
+  <div class="card shadow-sm border-0 mb-5">
+    <div class="card-body">
+      <h3 class="fw-bold">Sentiment Analysis System Architecture</h3>
+
+      <p>
+        The implemented system integrates Natural Language Processing, Machine
+        Learning, and Generative AI to analyze user text input.
+      </p>
+
+      <div class="text-center">
+        <img
+          src="{{ url_for('static', filename='images/architecture2.jpeg') }}"
+          class="img-fluid rounded shadow"
+        />
+      </div>
+
+      <div class="mt-4">
+        <p>
+          The user enters text in any supported language. The system translates
+          the input into English before processing.
+        </p>
+
+        <p>
+          TF-IDF converts the text into numerical features that can be
+          understood by the trained Logistic Regression model.
+        </p>
+
+        <p>
+          The system predicts whether the message expresses a positive, neutral,
+          or negative sentiment. Generative AI is then used to provide a
+          human-readable explanation of the result.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+     FINAL IMPLEMENTATION SUMMARY
+========================================== -->
+
+  <div class="card bg-dark text-white shadow border-0 mb-5">
+    <div class="card-body p-5 text-center">
+      <h2 class="fw-bold">Transforming Text into Meaningful Insights</h2>
+
+      <p class="lead mt-3">
+        This Natural Language Processing application demonstrates how machine
+        learning can analyze human language and automatically understand
+        opinions, emotions, and feedback from text data.
+      </p>
+
+      <p>
+        By combining language translation, TF-IDF feature extraction, Logistic
+        Regression classification, and AI interpretation, the system provides
+        intelligent sentiment analysis that supports better understanding of
+        user-generated content.
+      </p>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

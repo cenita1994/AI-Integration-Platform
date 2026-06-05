@@ -1,0 +1,268 @@
+{% extends "base.html" %} {% block content %}
+
+<!-- HERO SECTION -->
+<section class="container-fluid py-5">
+  <div class="row align-items-center g-5">
+    <div class="col-md-6">
+      <span class="badge bg-primary mb-3"> Intelligent Systems </span>
+
+      <h1 class="fw-bold display-5">Machine Learning</h1>
+
+      <h4 class="text-primary mb-3">Teaching Machines to Learn from Data</h4>
+
+      <p class="lead text-muted">
+        Machine Learning (ML) is a branch of Artificial Intelligence that
+        enables computers to learn patterns from data and improve their
+        performance without being explicitly programmed. Instead of following
+        fixed instructions, machine learning systems analyze information,
+        discover relationships, and make predictions or decisions.
+      </p>
+
+      <a href="#what-is-ml" class="btn btn-primary btn-lg mt-3">
+        Start Learning
+      </a>
+    </div>
+
+    <div class="col-md-6">
+      <img
+        src="{{ url_for('static', filename='images/ai5.jpeg') }}"
+        class="img-fluid rounded-4 shadow"
+        alt="Machine Learning"
+      />
+    </div>
+  </div>
+</section>
+
+<!-- WHAT IS MACHINE LEARNING -->
+<section id="what-is-ml" class="container-fluid py-5">
+  <div class="row align-items-center g-5">
+    <div class="col-md-5">
+      <img
+        src="{{ url_for('static', filename='images/ai6.jpeg') }}"
+        class="img-fluid rounded-4 shadow-sm"
+      />
+    </div>
+
+    <div class="col-md-7">
+      <h2 class="fw-bold mb-3">What is Machine Learning?</h2>
+
+      <p class="fs-5 text-muted">
+        Traditional computer programs follow predefined rules created by
+        developers. Machine Learning allows computers to create their own
+        understanding by analyzing examples and identifying patterns from large
+        amounts of data.
+      </p>
+
+      <p class="fs-5 text-muted">
+        The more quality data a machine learning model receives, the better it
+        can learn and produce accurate results.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- HOW ML WORKS -->
+<section class="container-fluid py-5">
+  <div class="text-center mb-5">
+    <h2 class="fw-bold">The Machine Learning Process</h2>
+
+    <p class="text-muted">
+      Machine Learning follows a process of transforming data into intelligent
+      predictions.
+    </p>
+  </div>
+
+  <div class="row align-items-center g-5">
+    <div class="col-md-6">
+      <div class="alert alert-primary text-center fw-semibold">
+        Data Collection → Data Preparation → Model Training → Evaluation →
+        Prediction
+      </div>
+
+      <div class="list-group shadow-sm">
+        <div class="list-group-item">
+          <strong>Data Collection</strong>
+
+          <br />
+
+          Gather information that will be used for learning.
+        </div>
+
+        <div class="list-group-item">
+          <strong>Data Preparation</strong>
+
+          <br />
+
+          Clean and organize data before training.
+        </div>
+
+        <div class="list-group-item">
+          <strong>Model Training</strong>
+
+          <br />
+
+          Algorithms analyze data and discover patterns.
+        </div>
+
+        <div class="list-group-item">
+          <strong>Evaluation</strong>
+
+          <br />
+
+          Measure how accurate and reliable the model is.
+        </div>
+
+        <div class="list-group-item">
+          <strong>Prediction</strong>
+
+          <br />
+
+          The trained model produces intelligent results using new data.
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <img
+        src="{{ url_for('static', filename='images/ai7.jpeg') }}"
+        class="img-fluid rounded-4 shadow-sm"
+      />
+    </div>
+  </div>
+</section>
+
+<!-- TYPES OF MACHINE LEARNING -->
+<section class="container-fluid py-5">
+  <h2 class="fw-bold text-center mb-5">Types of Machine Learning</h2>
+
+  <div class="row g-4">
+    <!-- supervised -->
+
+    <div class="col-md-4">
+      <div class="card h-100 border-0 shadow-sm rounded-4">
+        <div class="card-body p-4">
+          <div class="fs-1">📘</div>
+
+          <h4 class="fw-bold">Supervised Learning</h4>
+
+          <p class="text-muted">
+            Machines learn using labeled data where correct answers are already
+            provided.
+          </p>
+
+          <ul>
+            <li>Email Spam Detection</li>
+
+            <li>Disease Prediction</li>
+
+            <li>Sales Forecasting</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- unsupervised -->
+
+    <div class="col-md-4">
+      <div class="card h-100 border-0 shadow-sm rounded-4">
+        <div class="card-body p-4">
+          <div class="fs-1">🔍</div>
+
+          <h4 class="fw-bold">Unsupervised Learning</h4>
+
+          <p class="text-muted">
+            Machines discover hidden patterns from data without predefined
+            answers.
+          </p>
+
+          <ul>
+            <li>Customer Segmentation</li>
+
+            <li>Data Grouping</li>
+
+            <li>Pattern Discovery</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- reinforcement -->
+
+    <div class="col-md-4">
+      <div class="card h-100 border-0 shadow-sm rounded-4">
+        <div class="card-body p-4">
+          <div class="fs-1">🎮</div>
+
+          <h4 class="fw-bold">Reinforcement Learning</h4>
+
+          <p class="text-muted">
+            Machines learn through actions, rewards, and penalties.
+          </p>
+
+          <ul>
+            <li>Robotics</li>
+
+            <li>Game AI</li>
+
+            <li>Autonomous Systems</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMON ALGORITHMS -->
+<section class="container-fluid py-5">
+  <h2 class="fw-bold mb-4">Common Machine Learning Algorithms</h2>
+
+  <div class="row g-3">
+    {% for algorithm in [ "Linear Regression", "Logistic Regression", "Decision
+    Tree", "Random Forest", "Support Vector Machine (SVM)", "K-Nearest Neighbors
+    (KNN)", "Neural Networks" ] %}
+
+    <div class="col-md-4">
+      <div class="card border-0 shadow-sm rounded-4">
+        <div class="card-body fw-semibold">✓ {{ algorithm }}</div>
+      </div>
+    </div>
+
+    {% endfor %}
+  </div>
+</section>
+
+<!-- APPLICATIONS -->
+<section class="container-fluid py-5">
+  <h2 class="fw-bold text-center mb-5">Applications of Machine Learning</h2>
+
+  <div class="row g-3 text-center">
+    {% for app in [ "🏥 Healthcare Prediction", "🛒 Product Recommendation", "📈
+    Business Forecasting", "🚗 Self-Driving Technology", "🔐 Fraud Detection",
+    "💬 Sentiment Analysis", "🌱 Smart Agriculture" ] %}
+
+    <div class="col-md-3">
+      <div class="card border-0 shadow-sm rounded-4">
+        <div class="card-body fw-semibold">{{ app }}</div>
+      </div>
+    </div>
+
+    {% endfor %}
+  </div>
+</section>
+
+<!-- CLOSING -->
+<section class="container-fluid py-5">
+  <div class="card border-0 shadow-sm rounded-4">
+    <div class="card-body p-5 text-center">
+      <h2 class="fw-bold">The Power of Learning Machines</h2>
+
+      <p class="fs-5 text-muted">
+        Machine Learning transforms data into knowledge. By allowing computers
+        to learn from experience, ML helps create intelligent solutions that
+        improve decision-making and solve real-world problems.
+      </p>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
