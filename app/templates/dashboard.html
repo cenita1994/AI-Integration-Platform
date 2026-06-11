@@ -1,0 +1,396 @@
+{% extends "base.html" %} {% block content %}
+
+<!-- =====================================
+     HERO SECTION
+===================================== -->
+
+<div class="card border-0 shadow-lg rounded-4 overflow-hidden mb-5">
+  <div class="row g-0 align-items-center">
+    <!-- INTRODUCTION -->
+
+    <div class="col-md-7">
+      <div class="p-5">
+        <span class="badge bg-primary mb-3">
+          Artificial Intelligence • Machine Learning • Data Science
+        </span>
+
+        <h1 class="display-5 fw-bold">AI Integration Platform</h1>
+
+        <h3 class="text-primary mt-3">
+          Transforming Ideas and Data into Intelligent Solutions
+        </h3>
+
+        <p class="lead mt-4">
+          A web-based Artificial Intelligence platform demonstrating the
+          integration of machine learning models, deep learning, and generative
+          AI technologies into intelligent applications.
+        </p>
+
+        <p>
+          This platform presents practical implementations of AI including
+          predictive analytics, natural language processing, and computer vision
+          applications.
+        </p>
+
+        <hr />
+
+        <p class="mb-1">Developed by</p>
+
+        <h3 class="fw-bold text-primary">Jonelle Angelo S. Cenita</h3>
+
+        <p>
+          BSIT • MSIT • DIT • Licensed Professional Teacher
+
+          <br />
+
+          Program Head, Bachelor of Science in Information Systems
+        </p>
+      </div>
+    </div>
+
+    <!-- PROFILE IMAGE -->
+
+    <div class="col-md-5 bg-light text-center">
+      <img
+        src="{{ url_for('static',
+      filename='images/profile.jpeg') }}"
+        class="img-fluid rounded-circle shadow m-4"
+        style="width: 330px; height: 330px; object-fit: cover"
+      />
+    </div>
+  </div>
+</div>
+
+<!-- =====================================
+     ABOUT PLATFORM
+===================================== -->
+
+<div class="row align-items-center mb-5">
+  <div class="col-md-6">
+    <h2 class="fw-bold">
+      Building Intelligent Applications Through AI Integration
+    </h2>
+
+    <p class="mt-3">
+      The AI Integration Platform demonstrates the complete development process
+      of intelligent systems from data preparation, model training, deployment,
+      and AI-powered interpretation.
+    </p>
+
+    <p>
+      It combines software development, artificial intelligence, machine
+      learning, and data analytics concepts to create real-world intelligent
+      solutions.
+    </p>
+  </div>
+
+  <div class="col-md-6">
+    <img
+      src="{{ url_for('static',
+filename='images/ai_dashboard.jpeg') }}"
+      class="img-fluid rounded shadow"
+    />
+  </div>
+</div>
+
+<!-- =====================================
+     LEARNING MODULES
+===================================== -->
+
+<h2 class="fw-bold mb-4">Explore Artificial Intelligence Concepts</h2>
+
+<div class="row g-4 mb-5">
+  <!-- INTELLIGENT SYSTEMS -->
+
+  <div class="col-md-4">
+    <div class="card border-0 shadow-sm rounded-4 h-100">
+      <div class="card-body p-4 text-center">
+        <h1>🧠</h1>
+
+        <h5 class="fw-bold">Intelligent Systems</h5>
+
+        <p>
+          Understand Artificial Intelligence, Machine Learning, and Deep
+          Learning relationships.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- MACHINE LEARNING PARADIGMS -->
+
+  <div class="col-md-4">
+    <div class="card border-0 shadow-sm rounded-4 h-100">
+      <div class="card-body p-4 text-center">
+        <h1>📚</h1>
+
+        <h5 class="fw-bold">Machine Learning Paradigms</h5>
+
+        <p>
+          Explore supervised learning, unsupervised learning, and reinforcement
+          learning approaches.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- AI APPLICATIONS -->
+
+  <div class="col-md-4">
+    <div class="card border-0 shadow-sm rounded-4 h-100">
+      <div class="card-body p-4 text-center">
+        <h1>🚀</h1>
+
+        <h5 class="fw-bold">AI Applications</h5>
+
+        <p>
+          Discover intelligent applications powered by machine learning models
+          and AI technologies.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- =====================================
+     CLICKABLE AI APPLICATIONS
+===================================== -->
+
+<h2 class="fw-bold mb-4">Artificial Intelligence Applications</h2>
+
+<div class="row g-4 mb-5">
+  <!-- PREDICTIVE ANALYTICS -->
+
+  <div class="col-md-4">
+    <a
+      href="{{ url_for('predictive.buy_computer_prediction') }}"
+      class="text-decoration-none text-dark"
+    >
+      <div class="card border-0 shadow-sm rounded-4 h-100">
+        <div class="card-body p-4">
+          <h2>📊</h2>
+
+          <h5 class="fw-bold">Predictive Analytics</h5>
+
+          <p>
+            Predict future outcomes using historical data and machine learning
+            algorithms.
+          </p>
+
+          <span class="badge bg-primary"> Open Project </span>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <!-- NATURAL LANGUAGE PROCESSING -->
+
+  <div class="col-md-4">
+    <a
+      href="{{ url_for('nlp.sentiment_analysis') }}"
+      class="text-decoration-none text-dark"
+    >
+      <div class="card border-0 shadow-sm rounded-4 h-100">
+        <div class="card-body p-4">
+          <h2>💬</h2>
+
+          <h5 class="fw-bold">Natural Language Processing</h5>
+
+          <p>Analyze text, emotions, opinions, and human language using AI.</p>
+
+          <span class="badge bg-primary"> Open Project </span>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <!-- COMPUTER VISION -->
+
+  <div class="col-md-4">
+    <a
+      href="{{ url_for('vision.image_classification') }}"
+      class="text-decoration-none text-dark"
+    >
+      <div class="card border-0 shadow-sm rounded-4 h-100">
+        <div class="card-body p-4">
+          <h2>👁️</h2>
+
+          <h5 class="fw-bold">Computer Vision</h5>
+
+          <p>
+            Recognize images, detect visual patterns, and classify objects using
+            deep learning.
+          </p>
+
+          <span class="badge bg-primary"> Open Project </span>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>
+<!-- =====================================
+     IMPLEMENTED PROJECTS
+===================================== -->
+
+<h2 class="fw-bold mb-4">Implemented Intelligent Systems</h2>
+
+<div class="row g-4 mb-5">
+  <!-- BUY COMPUTER -->
+
+  <div class="col-md-4">
+    <div class="card border-0 shadow-sm rounded-4 h-100">
+      <div class="card-body p-4">
+        <h3>📊 Buy Computer Prediction</h3>
+
+        <p>
+          A Predictive Analytics application that evaluates input
+          characteristics and predicts possible outcomes using a trained machine
+          learning model.
+        </p>
+
+        <p>
+          The system demonstrates the integration of a classification algorithm,
+          Flask backend processing, and AI-generated explanation.
+        </p>
+
+        <strong> Random Forest • Flask • Gemini AI </strong>
+      </div>
+    </div>
+  </div>
+
+  <!-- SENTIMENT ANALYSIS -->
+
+  <div class="col-md-4">
+    <div class="card border-0 shadow-sm rounded-4 h-100">
+      <div class="card-body p-4">
+        <h3>💬 Twitter Sentiment Analysis</h3>
+
+        <p>
+          A Natural Language Processing system that analyzes text input and
+          determines whether the expressed sentiment is positive, neutral, or
+          negative.
+        </p>
+
+        <p>
+          The application uses text preprocessing, TF-IDF feature extraction,
+          machine learning classification, and AI interpretation.
+        </p>
+
+        <strong> Logistic Regression • TF-IDF • Gemini AI </strong>
+      </div>
+    </div>
+  </div>
+
+  <!-- IMAGE CLASSIFICATION -->
+
+  <div class="col-md-4">
+    <div class="card border-0 shadow-sm rounded-4 h-100">
+      <div class="card-body p-4">
+        <h3>👁️ Cat vs Dog Classification</h3>
+
+        <p>
+          A Computer Vision application that analyzes uploaded images and
+          predicts whether the image belongs to a cat or dog category.
+        </p>
+
+        <p>
+          The system uses a MobileNetV2 Convolutional Neural Network model
+          trained through transfer learning for image classification.
+        </p>
+
+        <strong> MobileNetV2 CNN • TensorFlow • Gemini AI </strong>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- =====================================
+     DEVELOPER PROFILE
+===================================== -->
+
+<div class="card border-0 shadow-lg rounded-4 mb-5">
+  <div class="card-body p-5">
+    <div class="row align-items-center">
+      <!-- INFORMATION -->
+
+      <div class="col-md-8">
+        <h2 class="fw-bold">Developer and Research Profile</h2>
+
+        <h3 class="text-primary fw-bold">Jonelle Angelo S. Cenita, DIT, LPT</h3>
+
+        <p class="mt-3">
+          An Information Technology professional, educator, researcher, and
+          software developer specializing in Artificial Intelligence, Machine
+          Learning, Data Science, and Intelligent Information Systems.
+        </p>
+
+        <p>
+          Graduate of Bachelor of Science in Information Technology, Master of
+          Science in Information Technology, and Doctor in Information
+          Technology.
+        </p>
+
+        <p>
+          A Licensed Professional Teacher and Program Head of the Bachelor of
+          Science in Information Systems program, focusing on AI-driven
+          solutions, research development, and technology innovation.
+        </p>
+
+        <h5 class="fw-bold">Research Interests</h5>
+
+        <ul>
+          <li>Artificial Intelligence</li>
+
+          <li>Machine Learning Applications</li>
+
+          <li>Deep Learning and Computer Vision</li>
+
+          <li>Natural Language Processing</li>
+
+          <li>Software Engineering</li>
+        </ul>
+
+        <a
+          href="https://scholar.google.com/citations?user=Tn5RkC0AAAAJ&hl=tl&oi=ao"
+          target="_blank"
+          class="btn btn-primary rounded-pill"
+        >
+          View Google Scholar Profile
+        </a>
+      </div>
+
+      <!-- IMAGE -->
+
+      <div class="col-md-4 text-center">
+        <img
+          src="{{ url_for('static',
+filename='images/research.jpeg') }}"
+          class="img-fluid rounded shadow"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- =====================================
+     TECHNOLOGY STACK
+===================================== -->
+
+<div class="card bg-dark text-white border-0 shadow rounded-4 mb-5">
+  <div class="card-body p-5 text-center">
+    <h2 class="fw-bold">Technologies Behind the Platform</h2>
+
+    <p class="lead mt-4">
+      Python Flask • Bootstrap 5 • Machine Learning • Deep Learning • TensorFlow
+      • Scikit-Learn • Orange Data Mining • Google Colab • Gemini AI
+    </p>
+
+    <p>
+      This platform represents the integration of software engineering,
+      artificial intelligence, data analytics, and intelligent system
+      development into practical AI-powered solutions.
+    </p>
+  </div>
+</div>
+
+{% endblock %}
