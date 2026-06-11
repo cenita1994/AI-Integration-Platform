@@ -5,6 +5,8 @@ from flask import (
     jsonify
 )
 
+import traceback
+
 from .service import (
     classify_image
 )
@@ -33,10 +35,10 @@ def image_classification():
 def analyze_image():
 
     try:
-        print("IMAGE ANALYZE ROUTE REACHED")
+        print("IMAGE ANALYZE ROUTE REACHED", flush=True)
 
         if "image" not in request.files:
-            print("No image key found in request.files")
+            print("ERROR: No image key found", flush=True)
 
             return jsonify({
                 "error": "No image uploaded."
@@ -47,7 +49,7 @@ def analyze_image():
         ]
 
         if uploaded_file.filename == "":
-            print("Empty filename received")
+            print("ERROR: Empty filename", flush=True)
 
             return jsonify({
                 "error": "No selected image."
@@ -57,15 +59,16 @@ def analyze_image():
             uploaded_file
         )
 
-        print("IMAGE ANALYSIS SUCCESS")
+        print("IMAGE ANALYSIS SUCCESS", flush=True)
 
         return jsonify(
             result
         )
 
     except Exception as error:
-        print("IMAGE ANALYSIS ERROR:")
-        print(error)
+        print("IMAGE ANALYSIS ERROR:", flush=True)
+        print(error, flush=True)
+        traceback.print_exc()
 
         return jsonify({
             "error": str(error),
