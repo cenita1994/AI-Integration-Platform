@@ -1,19 +1,28 @@
 Flask==3.0.3
 
+gunicorn==22.0.0
+
+# Data Processing
 numpy==1.26.4
 pandas==2.2.2
 
-scikit-learn==1.5.2
+# Machine Learning
+scikit-learn==1.6.1
 joblib==1.4.2
 
+# Deep Learning / Computer Vision
 tensorflow==2.15.0
-keras==2.15.0
-
+h5py==3.10.0
 Pillow==10.4.0
 
+# Generative AI
 google-generativeai==0.8.3
+
+# Environment Variables
 python-dotenv==1.0.1
 
+# NLP Translation
 deep-translator==1.11.4
 
-gunicorn==22.0.0
+# HTTP Utilities
+requests==2.32.3
