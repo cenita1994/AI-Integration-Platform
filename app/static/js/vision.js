@@ -139,7 +139,15 @@ function analyzeImage() {
       body: formData,
     },
   )
-    .then((response) => response.json())
+    .then((response) => {
+      if (!response.ok) {
+        return response.json().then((errorResult) => {
+          throw new Error(errorResult.error || "Server error");
+        });
+      }
+
+      return response.json();
+    })
 
     .then((result) => {
       // Similarity section
@@ -249,16 +257,13 @@ function analyzeImage() {
 
       resultBox.innerHTML = `
 
+        <div class="alert alert-danger">
 
-                <div class="alert alert-danger">
+            Unable to process image classification.<br>
+            <small>${error.message}</small>
 
+        </div>
 
-                    Unable to process image classification.
-
-
-                </div>
-
-
-            `;
+    `;
     });
 }
