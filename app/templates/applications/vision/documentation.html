@@ -1,36 +1,33 @@
-{% extends "base.html" %} {% block title %} Cat vs Dog Image Classification
-Documentation {% endblock %} {% block content %}
-
-<!-- ================= HERO SECTION ================= -->
+{% extends "base.html" %} {% block title %} Cat and Dog Image Classification
+with Unknown Image Detection {% endblock %} {% block content %}
 
 <section class="container py-5">
   <div class="row align-items-center">
     <div class="col-md-6">
-      <h1 class="fw-bold">Cat vs Dog Image Classification</h1>
+      <h1 class="fw-bold">
+        Cat and Dog Image Classification with Unknown Image Detection
+      </h1>
 
       <p class="lead mt-3">
-        An Artificial Intelligence application that utilizes Computer Vision and
-        Deep Learning techniques to classify images of cats and dogs using a
-        Convolutional Neural Network model.
+        A Computer Vision and Deep Learning application that classifies uploaded
+        images as Cat or Dog while detecting images that do not belong to the
+        trained categories.
       </p>
 
       <p>
-        The system combines image preprocessing, transfer learning using
-        MobileNetV2 CNN architecture, Flask web integration, and AI-based
-        interpretation to provide understandable prediction results.
+        The system uses two major layers: a MobileNetV2 feature similarity
+        validation model and a MobileNetV2 CNN classification model.
       </p>
 
-      <span class="badge bg-primary"> Computer Vision </span>
-
-      <span class="badge bg-success"> Deep Learning </span>
-
-      <span class="badge bg-warning text-dark"> CNN Model </span>
+      <span class="badge bg-primary">Computer Vision</span>
+      <span class="badge bg-success">Deep Learning</span>
+      <span class="badge bg-warning text-dark">Unknown Detection</span>
+      <span class="badge bg-info text-dark">MobileNetV2</span>
     </div>
 
     <div class="col-md-6 text-center">
       <img
-        src="{{ url_for('static',
-            filename='images/vision3.jpeg') }}"
+        src="{{ url_for('static', filename='images/vision3.jpeg') }}"
         class="img-fluid rounded shadow"
         alt="Computer Vision"
       />
@@ -38,43 +35,36 @@ Documentation {% endblock %} {% block content %}
   </div>
 </section>
 
-<!-- ================= PROJECT OVERVIEW ================= -->
-
 <section class="container py-5">
   <h2 class="fw-bold mb-4">Project Overview</h2>
 
   <div class="card shadow p-4">
     <p>
-      This project demonstrates the implementation of an AI-powered image
-      classification system capable of identifying whether an uploaded image
-      belongs to a cat or dog category.
+      This project demonstrates a hybrid image classification system for
+      identifying cat and dog images. Unlike a basic binary classifier, the
+      system first checks whether the uploaded image is visually similar to the
+      trained cat and dog dataset before allowing the CNN model to classify it.
     </p>
 
     <p>
-      The development process follows a machine learning workflow, starting from
-      dataset preparation, model training, evaluation, deployment, and
-      integration into a web-based prediction system.
+      This prevents unrelated images from being incorrectly forced into either
+      Cat or Dog. If the uploaded image does not pass the similarity threshold,
+      the system returns <strong>Unknown Image</strong>.
     </p>
 
-    <h5 class="mt-3">Technologies Used:</h5>
+    <h5 class="mt-3">Technologies Used</h5>
 
     <ul>
-      <li>Python Programming Language</li>
-
-      <li>TensorFlow and Keras Deep Learning Framework</li>
-
-      <li>MobileNetV2 Transfer Learning Model</li>
-
-      <li>Orange Data Mining for Visual AI Workflow</li>
-
+      <li>Python</li>
+      <li>TensorFlow and Keras</li>
+      <li>MobileNetV2 Transfer Learning</li>
+      <li>MobileNetV2 Feature Extraction</li>
+      <li>Nearest Neighbor Similarity Validation</li>
       <li>Flask Web Framework</li>
-
-      <li>Gemini AI for Prediction Explanation</li>
+      <li>Gemini AI and Local AI Interpreter Fallback</li>
     </ul>
   </div>
 </section>
-
-<!-- ================= DATASET SECTION ================= -->
 
 <section class="container py-5">
   <div class="row align-items-center">
@@ -82,8 +72,8 @@ Documentation {% endblock %} {% block content %}
       <h2 class="fw-bold">Dataset Preparation</h2>
 
       <p>
-        The dataset contains labeled images of cats and dogs that were organized
-        into separate classes for supervised image classification.
+        The dataset contains labeled images of cats and dogs prepared for
+        supervised image classification.
       </p>
 
       <div class="card p-3 shadow-sm">
@@ -106,7 +96,7 @@ Documentation {% endblock %} {% block content %}
           </tr>
         </table>
 
-        <h6>Class Mapping:</h6>
+        <h6>Class Mapping</h6>
 
         <ul>
           <li>Cat → 0</li>
@@ -117,254 +107,293 @@ Documentation {% endblock %} {% block content %}
 
     <div class="col-md-6 text-center">
       <img
-        src="{{ url_for('static',
-filename='images/dataset3.jpeg') }}"
+        src="{{ url_for('static', filename='images/dataset3.jpeg') }}"
         class="img-fluid rounded shadow"
-        alt="Dataset"
+        alt="Dataset Preparation"
       />
     </div>
   </div>
 </section>
 
-<!-- ================= ORANGE DATA MINING ================= -->
-
 <section class="container py-5">
-  <h2 class="fw-bold mb-4">Orange Data Mining Workflow</h2>
+  <h2 class="fw-bold mb-4">Hybrid Computer Vision Architecture</h2>
 
-  <div class="row align-items-center">
-    <div class="col-md-6">
-      <img
-        src="{{ url_for('static',
-filename='images/orange_workflow3.jpeg') }}"
-        class="img-fluid rounded shadow"
-        alt="Orange Workflow"
-      />
-    </div>
-
-    <div class="col-md-6">
-      <p>
-        Orange Data Mining was used as a visual machine learning environment to
-        demonstrate the process of image loading, feature extraction, model
-        evaluation, and prediction.
-      </p>
-
-      <p>
-        The workflow provides an interactive representation of the image
-        classification pipeline without manually coding every machine learning
-        process.
-      </p>
-    </div>
+  <div class="text-center mb-4">
+    <img
+      src="{{ url_for('static', filename='images/New_architecture3.jpeg') }}"
+      class="img-fluid rounded shadow"
+      alt="Hybrid Computer Vision Architecture"
+    />
   </div>
-</section>
-
-<!-- ================= GOOGLE COLAB TRAINING ================= -->
-
-<section class="container py-5">
-  <div class="row align-items-center">
-    <div class="col-md-6">
-      <h2 class="fw-bold">Model Training Using Google Colab</h2>
-
-      <p>
-        The deep learning model was developed and trained using Google Colab
-        with TensorFlow and Keras libraries.
-      </p>
-
-      <p>
-        Google Colab provides cloud-based GPU resources that allow efficient
-        training of convolutional neural networks.
-      </p>
-    </div>
-
-    <div class="col-md-6 text-center">
-      <img
-        src="{{ url_for('static',
-filename='images/colab3.jpeg') }}"
-        class="img-fluid rounded shadow"
-        alt="Google Colab Training"
-      />
-    </div>
-  </div>
-</section>
-
-<!-- ================= MODEL SECTION ================= -->
-
-<section class="container py-5">
-  <h2 class="fw-bold">MobileNetV2 CNN Model Architecture</h2>
 
   <div class="card shadow p-4">
     <p>
-      The classification model uses MobileNetV2, a lightweight Convolutional
-      Neural Network architecture designed for efficient image recognition
-      tasks.
+      The system follows a two-layer computer vision architecture. The first
+      layer validates whether the image belongs to the expected visual domain,
+      while the second layer performs Cat or Dog classification.
     </p>
 
-    <p>
-      Through transfer learning, the model utilizes previously learned visual
-      features and adapts them for the classification of cat and dog images.
-    </p>
+    <div class="row mt-4">
+      <div class="col-md-6">
+        <div class="card h-100 shadow-sm p-4">
+          <h5 class="fw-bold">Layer 1: Similarity Validation</h5>
 
-    <h5>Model Configuration</h5>
+          <p>
+            MobileNetV2 is used as a feature extractor to generate image feature
+            embeddings. These embeddings are compared with the saved similarity
+            profile of cat and dog images.
+          </p>
 
-    <ul>
-      <li>Base Model: MobileNetV2</li>
+          <ul>
+            <li>Feature Extractor: MobileNetV2 ImageNet</li>
+            <li>Validation Method: Nearest Neighbor Similarity</li>
+            <li>Similarity Profile: cat_dog_similarity_profile_v4.pkl</li>
+            <li>Similarity Threshold: 0.50</li>
+            <li>Output: Known Image or Unknown Image</li>
+          </ul>
+        </div>
+      </div>
 
-      <li>Learning Approach: Transfer Learning</li>
+      <div class="col-md-6">
+        <div class="card h-100 shadow-sm p-4">
+          <h5 class="fw-bold">Layer 2: CNN Classification</h5>
 
-      <li>Classification Type: Binary Classification</li>
+          <p>
+            If the uploaded image passes similarity validation, it is processed
+            by the CNN model for final classification.
+          </p>
 
-      <li>Output Classes: Cat and Dog</li>
-    </ul>
-  </div>
-</section>
-
-<!-- ================= SYSTEM ARCHITECTURE ================= -->
-
-<section class="container py-5">
-  <h2 class="fw-bold mb-4">System Architecture and Prediction Flow</h2>
-
-  <div class="row align-items-center">
-    <div class="col-md-6 text-center">
-      <img
-        src="{{ url_for('static',
-filename='images/architecture3.jpeg') }}"
-        class="img-fluid rounded shadow"
-        alt="CNN Architecture"
-      />
-    </div>
-
-    <div class="col-md-6">
-      <p>
-        The system follows a complete computer vision pipeline where the
-        uploaded image is processed before being analyzed by the trained deep
-        learning model.
-      </p>
-
-      <div class="card shadow-sm p-4">
-        <h5>Prediction Workflow</h5>
-
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">1. User Image Upload</li>
-
-          <li class="list-group-item">2. Image Preprocessing</li>
-
-          <li class="list-group-item">3. MobileNetV2 CNN Model Analysis</li>
-
-          <li class="list-group-item">4. Cat or Dog Prediction</li>
-
-          <li class="list-group-item">5. Confidence Score Generation</li>
-
-          <li class="list-group-item">6. Gemini AI Interpretation</li>
-        </ul>
+          <ul>
+            <li>Model: MobileNetV2 Transfer Learning CNN</li>
+            <li>Model File: cat_dog_mobilenet_model_v2.h5</li>
+            <li>Classification Type: Binary Classification</li>
+            <li>Output Classes: Cat and Dog</li>
+            <li>Output: Prediction and Confidence Score</li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ================= PERFORMANCE RESULT ================= -->
+<section class="container py-5">
+  <h2 class="fw-bold">Prediction Workflow</h2>
+
+  <div class="card shadow p-4">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">1. User uploads an image</li>
+      <li class="list-group-item">2. Image is converted to RGB</li>
+      <li class="list-group-item">3. Image is resized to 224x224 pixels</li>
+      <li class="list-group-item">4. MobileNetV2 preprocessing is applied</li>
+      <li class="list-group-item">
+        5. Feature similarity validation is performed
+      </li>
+      <li class="list-group-item">
+        6. If similarity is below 0.50, result is Unknown Image
+      </li>
+      <li class="list-group-item">
+        7. If similarity passes, CNN classifies Cat or Dog
+      </li>
+      <li class="list-group-item">
+        8. Confidence score and similarity score are generated
+      </li>
+      <li class="list-group-item">
+        9. Gemini or local AI interpreter explains the result
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="container py-5">
+  <h2 class="fw-bold">Model Training Using Google Colab</h2>
+
+  <div class="card shadow p-4">
+    <p>
+      The CNN model was trained in Google Colab using TensorFlow and Keras.
+      MobileNetV2 was used as the base model for transfer learning.
+    </p>
+
+    <h5>Training Configuration</h5>
+
+    <ul>
+      <li>Image Size: 224x224 pixels</li>
+      <li>Classes: Cat and Dog</li>
+      <li>Training Images: 1002</li>
+      <li>Validation Images: 200</li>
+      <li>Epochs: Up to 20 epochs</li>
+      <li>Optimizer: Adam</li>
+      <li>Learning Rate: 0.0001 with ReduceLROnPlateau</li>
+      <li>Model Format: HDF5 (.h5)</li>
+    </ul>
+  </div>
+</section>
 
 <section class="container py-5">
   <h2 class="fw-bold mb-4">Model Performance Evaluation</h2>
 
   <p>
-    After training and validation, the MobileNetV2 model achieved high
-    classification performance in identifying cat and dog images.
+    The CNN model was evaluated using 200 validation images consisting of 100
+    Cat images and 100 Dog images.
   </p>
 
   <div class="row text-center mt-4">
-    <div class="col-md-4">
+    <div class="col-md-3">
       <div class="card shadow p-4">
-        <h3 class="fw-bold">98.50%</h3>
-
-        <p>Final Accuracy</p>
+        <h3 class="fw-bold">97.50%</h3>
+        <p>Accuracy</p>
       </div>
     </div>
 
-    <div class="col-md-4">
+    <div class="col-md-3">
       <div class="card shadow p-4">
-        <h3 class="fw-bold">0.0701</h3>
-
-        <p>Final Loss</p>
+        <h3 class="fw-bold">98.97%</h3>
+        <p>Precision</p>
       </div>
     </div>
 
-    <div class="col-md-4">
+    <div class="col-md-3">
       <div class="card shadow p-4">
-        <h3 class="fw-bold">CNN</h3>
+        <h3 class="fw-bold">96.00%</h3>
+        <p>Recall</p>
+      </div>
+    </div>
 
-        <p>Deep Learning Model</p>
+    <div class="col-md-3">
+      <div class="card shadow p-4">
+        <h3 class="fw-bold">97.46%</h3>
+        <p>F1 Score</p>
       </div>
     </div>
   </div>
 
   <div class="card mt-4 p-4 shadow-sm">
-    <h5>Training Result Summary</h5>
+    <h5>Classification Report Summary</h5>
 
     <table class="table">
       <tr>
-        <th>Metric</th>
-
-        <th>Result</th>
+        <th>Class</th>
+        <th>Precision</th>
+        <th>Recall</th>
+        <th>F1-Score</th>
+        <th>Support</th>
       </tr>
 
       <tr>
-        <td>Model</td>
-
-        <td>MobileNetV2</td>
+        <td>Cat</td>
+        <td>0.96</td>
+        <td>0.99</td>
+        <td>0.98</td>
+        <td>100</td>
       </tr>
 
       <tr>
-        <td>Classification Task</td>
+        <td>Dog</td>
+        <td>0.99</td>
+        <td>0.96</td>
+        <td>0.97</td>
+        <td>100</td>
+      </tr>
+    </table>
+  </div>
 
-        <td>Cat and Dog Image Classification</td>
+  <div class="card mt-4 p-4 shadow-sm">
+    <h5>Confusion Matrix</h5>
+
+    <table class="table">
+      <tr>
+        <th></th>
+        <th>Predicted Cat</th>
+        <th>Predicted Dog</th>
       </tr>
 
       <tr>
-        <td>Accuracy</td>
-
-        <td>98.50%</td>
+        <th>Actual Cat</th>
+        <td>99</td>
+        <td>1</td>
       </tr>
 
       <tr>
-        <td>Loss</td>
-
-        <td>0.0701</td>
+        <th>Actual Dog</th>
+        <td>4</td>
+        <td>96</td>
       </tr>
     </table>
   </div>
 </section>
 
-<!-- ================= SAMPLE PREDICTION ================= -->
+<section class="container py-5">
+  <h2 class="fw-bold mb-4">Unknown Image Detection</h2>
+
+  <div class="card shadow p-4">
+    <p>
+      The unknown image detection feature prevents the model from forcing
+      unrelated images into Cat or Dog. If the uploaded image is not visually
+      similar to the trained image feature profile, the system rejects the image
+      before CNN classification.
+    </p>
+
+    <h5>Decision Logic</h5>
+
+    <ul>
+      <li>If similarity score is below 0.50 → Unknown Image</li>
+      <li>
+        If similarity score is 0.50 or higher → Proceed to CNN classification
+      </li>
+      <li>If CNN output is below 0.5 → Cat</li>
+      <li>If CNN output is 0.5 or higher → Dog</li>
+    </ul>
+  </div>
+</section>
 
 <section class="container py-5">
-  <h2 class="fw-bold mb-4">Sample Image Prediction</h2>
+  <h2 class="fw-bold">AI-Based Interpretation Layer</h2>
+
+  <div class="card shadow p-4">
+    <p>
+      The system provides a human-readable explanation of the prediction result.
+      When Gemini AI is available, it generates the interpretation dynamically.
+    </p>
+
+    <p>
+      If Gemini API quota is unavailable or the request fails, the system uses a
+      local researcher-style AI interpreter fallback. This ensures that the
+      application still provides a professional explanation even without Gemini
+      access.
+    </p>
+
+    <ul>
+      <li>Gemini AI Interpreter</li>
+      <li>Local Computer Vision Researcher Fallback</li>
+    </ul>
+  </div>
+</section>
+
+<section class="container py-5">
+  <h2 class="fw-bold mb-4">Sample Prediction Output</h2>
 
   <div class="row align-items-center">
     <div class="col-md-6">
       <p>
-        The trained CNN model was integrated into a Flask web application where
-        users can upload an image and receive an AI-generated classification
-        result.
+        The trained system is integrated into a Flask web application where
+        users can upload an image and receive a classification result,
+        confidence score, similarity score, and explanation.
       </p>
 
       <div class="card shadow p-4">
-        <h5>Example Output</h5>
+        <h5>Possible Outputs</h5>
 
         <ul>
-          <li>Uploaded Image: Animal Image</li>
-
-          <li>Predicted Category: Cat / Dog</li>
-
-          <li>Prediction Confidence: Generated by CNN Model</li>
-
-          <li>AI Explanation: Generated using Gemini AI</li>
+          <li>Prediction Result: Cat, Dog, or Unknown Image</li>
+          <li>Confidence Score: Generated by CNN classification</li>
+          <li>Similarity Score: Generated by feature validation</li>
+          <li>Explanation: Gemini AI or local AI interpreter fallback</li>
         </ul>
       </div>
     </div>
 
     <div class="col-md-6 text-center">
       <img
-        src="{{ url_for('static',
-filename='images/sample_prediction.jpeg') }}"
+        src="{{ url_for('static', filename='images/sample_prediction.jpeg') }}"
         class="img-fluid rounded shadow"
         alt="Sample Prediction"
       />
@@ -372,42 +401,100 @@ filename='images/sample_prediction.jpeg') }}"
   </div>
 </section>
 
-<!-- ================= AI INTERPRETATION ================= -->
-
 <section class="container py-5">
-  <h2 class="fw-bold">AI-Based Interpretation</h2>
+  <h2 class="fw-bold mb-4">Project Resources and Source Files</h2>
 
   <div class="card shadow p-4">
     <p>
-      Aside from displaying the prediction result, the system integrates Gemini
-      Artificial Intelligence to generate a human-readable interpretation of the
-      classification output.
+      The project resources include the Google Colab notebooks, trained model
+      files, similarity validation profile, dataset folder, and Orange Data
+      Mining workflow used during development and testing.
     </p>
 
-    <p>
-      This feature improves user understanding by explaining why the model
-      identified the uploaded image as a cat or dog, making the prediction
-      result more informative and interactive.
-    </p>
+    <div class="table-responsive">
+      <table class="table table-bordered align-middle">
+        <tr>
+          <th>Resource</th>
+          <th>Description</th>
+          <th>Link</th>
+        </tr>
+
+        <tr>
+          <td>Cat and Dog Similarity Validation V4</td>
+          <td>
+            Google Colab notebook used to create the feature similarity profile
+            for unknown image detection.
+          </td>
+          <td>
+            <a
+              href="https://colab.research.google.com/drive/1cnLLz0HPdZr_CftCSlisxL7U511tSuGd?usp=sharing"
+              target="_blank"
+            >
+              Open Colab
+            </a>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Cat and Dog CNN Model V2</td>
+          <td>
+            Google Colab notebook used to train the MobileNetV2 CNN
+            classification model.
+          </td>
+          <td>
+            <a
+              href="https://colab.research.google.com/drive/1mnVEAzpw70ThP_Bqu9NZ9aqV_Fdo78Zd?usp=sharing"
+              target="_blank"
+            >
+              Open Colab
+            </a>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Google Drive Project Folder</td>
+          <td>
+            Contains the dataset, Orange workflow file, trained CNN model, and
+            similarity validation profile.
+          </td>
+          <td>
+            <a
+              href="https://drive.google.com/drive/folders/1LWDn3gRvP6TltQUYtYYIo1vwHtb_8wsH?usp=sharing"
+              target="_blank"
+            >
+              Open Drive Folder
+            </a>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <h5 class="mt-4">Included Files</h5>
+
+    <ul>
+      <li>datasets</li>
+      <li>dog_cat.ows - Orange Data Mining workflow</li>
+      <li>cat_dog_similarity_profile_v4.pkl</li>
+      <li>cat_dog_mobilenet_model_v2.h5</li>
+    </ul>
   </div>
 </section>
-
-<!-- ================= CONCLUSION ================= -->
 
 <section class="container py-5">
   <div class="card shadow p-5 text-center">
     <h2 class="fw-bold">Conclusion</h2>
 
     <p class="mt-3">
-      The Cat vs Dog Image Classification System demonstrates how computer
-      vision, deep learning, and artificial intelligence can be integrated into
-      a web-based application.
+      The updated Cat and Dog Image Classification System demonstrates a more
+      reliable computer vision workflow by combining CNN classification with
+      feature similarity validation.
     </p>
 
     <p>
-      Using MobileNetV2 CNN architecture and transfer learning, the system
-      achieved accurate image classification while providing understandable
-      AI-generated explanations.
+      The CNN model performs Cat and Dog classification, while the similarity
+      validation layer helps detect images outside the trained domain. This
+      makes the system more practical, explainable, and suitable for real-world
+      AI demonstrations.
     </p>
   </div>
 </section>

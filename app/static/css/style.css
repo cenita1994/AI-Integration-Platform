@@ -1,7 +1,6 @@
 /* ==================================================
    AI INTEGRATION PLATFORM
    Custom CSS
-   Bootstrap handles most of the design
 ================================================== */
 
 /* ==================================================
@@ -46,40 +45,122 @@ body {
   overflow-y: auto;
 }
 
-/* Sidebar Main Links */
+/* Hide scrollbar but keep scroll */
+
+.sidebar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: #d0d7de;
+
+  border-radius: 10px;
+}
+
+/* ==================================================
+   SIDEBAR LOGO
+================================================== */
+
+.sidebar-logo {
+  text-align: center;
+
+  padding: 30px 20px;
+}
+
+.sidebar-logo img {
+  width: 190px;
+
+  max-width: 100%;
+
+  height: auto;
+
+  object-fit: contain;
+}
+
+/* ==================================================
+   SIDEBAR MENU
+================================================== */
+
+.sidebar-menu {
+  padding: 0 15px 20px 15px;
+}
+
+/* Main navigation */
 
 .sidebar-link {
   display: flex;
 
   align-items: center;
 
+  gap: 12px;
+
+  padding: 12px 14px;
+
+  margin-bottom: 6px;
+
+  color: #334155;
+
+  font-weight: 600;
+
   text-decoration: none;
 
-  border-radius: 8px;
+  border-radius: 12px;
 
-  transition: 0.2s;
+  transition: all 0.25s ease;
 }
 
 .sidebar-link:hover {
-  background-color: #f1f5f9;
+  background-color: #eef5ff;
+
+  color: #0d6efd;
+
+  transform: translateX(4px);
 }
 
-/* Dropdown items */
+/* ==================================================
+   SUB MENU
+================================================== */
+
+.sidebar-submenu {
+  margin-left: 10px;
+
+  margin-bottom: 10px;
+}
 
 .sidebar-submenu a {
   display: block;
 
+  padding: 9px 12px 9px 35px;
+
+  margin-bottom: 3px;
+
+  font-size: 14px;
+
+  color: #64748b;
+
   text-decoration: none;
 
-  padding: 8px 10px 8px 35px;
-
-  border-radius: 6px;
+  border-radius: 10px;
 
   transition: 0.2s;
 }
 
 .sidebar-submenu a:hover {
-  background-color: #f8f9fa;
+  background-color: #f1f5f9;
+
+  color: #0d6efd;
+}
+
+/* child menu */
+
+.sidebar-child {
+  margin-left: 15px;
+}
+
+.sidebar-child a {
+  font-size: 13px;
+
+  padding-left: 45px;
 }
 
 /* ==================================================
@@ -97,7 +178,7 @@ body {
 ================================================== */
 
 .content {
-  min-height: calc(100vh - 56px);
+  min-height: 100vh;
 
   overflow-x: hidden;
 }
@@ -107,11 +188,11 @@ body {
 ================================================== */
 
 .card {
-  transition: 0.2s;
+  transition: all 0.25s ease;
 }
 
 .card:hover {
-  transform: translateY(-3px);
+  transform: translateY(-5px);
 }
 
 /* ==================================================

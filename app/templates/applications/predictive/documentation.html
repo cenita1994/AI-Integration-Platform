@@ -3,13 +3,14 @@
 <!-- ==================================================
      HERO SECTION
 ================================================== -->
+
 <section class="container-fluid py-5">
   <div class="row align-items-center g-5">
     <div class="col-md-6">
       <span class="badge bg-primary mb-3"> Predictive Analytics </span>
 
       <h1 class="fw-bold display-5">
-        Buy Computer Prediction Using Machine Learning
+        Buy Computer Prediction Using Machine Learning and Generative AI
       </h1>
 
       <h4 class="text-primary mb-3">
@@ -17,16 +18,25 @@
       </h4>
 
       <p class="lead text-muted">
-        Predictive Analytics uses historical data, statistical techniques, and
-        Machine Learning algorithms to identify patterns and predict possible
-        future outcomes.
+        This project demonstrates how Predictive Analytics, Machine Learning,
+        and Generative AI can analyze customer information and predict future
+        purchasing decisions.
       </p>
 
       <p class="text-muted">
-        This project demonstrates an AI-powered prediction system that analyzes
-        customer information and determines whether a customer is likely to buy
-        a computer.
+        The system uses customer attributes to classify whether a customer is
+        likely to buy a computer while providing AI-generated explanations.
       </p>
+
+      <ul>
+        <li>Machine Learning Classification</li>
+
+        <li>Random Forest Prediction Model</li>
+
+        <li>Flask AI Integration</li>
+
+        <li>Gemini AI Interpretation</li>
+      </ul>
 
       <a href="#kdd-process" class="btn btn-primary btn-lg">
         Explore Development Process
@@ -35,7 +45,7 @@
 
     <div class="col-md-6">
       <img
-        src="{{ url_for('static', filename='images/predictive1.jpeg') }}"
+        src="{{ url_for('static', filename='images/predictive3.jpeg') }}"
         class="img-fluid rounded-4 shadow"
       />
     </div>
@@ -43,54 +53,7 @@
 </section>
 
 <!-- ==================================================
-     PROJECT OVERVIEW
-================================================== -->
-
-<section class="container-fluid py-5">
-  <h2 class="fw-bold mb-4">Project Overview</h2>
-
-  <div class="card border-0 shadow-sm rounded-4">
-    <div class="card-body p-5">
-      <p class="fs-5 text-muted">
-        The Buy Computer Prediction System applies Machine Learning
-        classification techniques to predict customer purchasing decisions. The
-        system receives customer attributes, processes them using a trained
-        model, and produces an intelligent prediction result.
-      </p>
-
-      <div class="alert alert-primary text-center fw-bold">
-        Customer Data
-
-        <br />
-
-        ↓
-
-        <br />
-
-        Machine Learning Model
-
-        <br />
-
-        ↓
-
-        <br />
-
-        Prediction Result
-
-        <br />
-
-        ↓
-
-        <br />
-
-        Will Buy Computer / Will Not Buy Computer
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ==================================================
-     PROJECT RESOURCES LINKS
+PROJECT RESOURCES
 ================================================== -->
 
 <section class="container-fluid py-5">
@@ -103,8 +66,7 @@
           <h4>📂 Dataset and Model Files</h4>
 
           <p>
-            Contains dataset, Orange workflow file, and trained Machine Learning
-            model.
+            Resources used for dataset preparation, training, and deployment.
           </p>
 
           <ul>
@@ -134,14 +96,14 @@
           <h4>📓 Google Colab</h4>
 
           <p>
-            Used for Python Machine Learning development, training, testing, and
-            exporting the model.
+            Used for Python model training, testing, and exporting the Machine
+            Learning model.
           </p>
 
           <a
             href="https://colab.research.google.com/drive/1ZZihC22uhmlGssMvNaRLtcKSc7uRgDGm?usp=sharing"
             target="_blank"
-            class="btn btn-primary"
+            class="btn btn-success"
           >
             Open Google Colab
           </a>
@@ -155,14 +117,13 @@
           <h4>🍊 Orange Data Mining</h4>
 
           <p>
-            Used as a visual Machine Learning tool for workflow creation and
-            algorithm evaluation.
+            Visual workflow tool used for algorithm comparison and evaluation.
           </p>
 
           <a
             href="https://orangedatamining.com/"
             target="_blank"
-            class="btn btn-primary"
+            class="btn btn-warning"
           >
             Visit Orange
           </a>
@@ -173,31 +134,30 @@
 </section>
 
 <!-- ==================================================
-     DATASET DESCRIPTION
+DATASET PREPARATION
 ================================================== -->
 
 <section class="container-fluid py-5">
   <div class="row align-items-center g-5">
     <div class="col-md-5">
       <img
-        src="{{ url_for('static', filename='images/dataset.jpeg') }}"
-        class="img-fluid rounded-4 shadow-sm"
+        src="{{ url_for('static', filename='images/predictivedataset.jpeg') }}"
+        class="img-fluid rounded-4 shadow"
       />
     </div>
 
     <div class="col-md-7">
-      <h2 class="fw-bold">Dataset Description</h2>
+      <h2 class="fw-bold">Buy Computer Dataset Preparation</h2>
 
       <p class="fs-5 text-muted">
-        The Buy Computer dataset contains customer information used to train a
-        classification model. The goal of the model is to learn relationships
-        between customer characteristics and purchasing decisions.
+        The dataset contains customer information used for supervised Machine
+        Learning classification.
       </p>
 
-      <table class="table table-bordered shadow-sm bg-white">
+      <table class="table table-bordered shadow-sm">
         <thead class="table-primary">
           <tr>
-            <th>Attribute</th>
+            <th>Feature</th>
 
             <th>Description</th>
           </tr>
@@ -213,32 +173,45 @@
           <tr>
             <td>Income</td>
 
-            <td>Customer income classification</td>
+            <td>Income classification</td>
           </tr>
 
           <tr>
-            <td>Student</td>
+            <td>Student Status</td>
 
-            <td>Identifies whether the customer is a student</td>
+            <td>Student information</td>
           </tr>
 
           <tr>
             <td>Credit Rating</td>
 
-            <td>Customer credit evaluation</td>
+            <td>Credit evaluation</td>
           </tr>
 
           <tr>
             <td>Buy Computer</td>
 
-            <td>Target prediction result</td>
+            <td>Target Variable (Yes / No)</td>
           </tr>
         </tbody>
       </table>
+
+      <h5 class="fw-bold mt-4">Machine Learning Preparation Pipeline</h5>
+
+      <ul>
+        <li>Dataset Collection</li>
+
+        <li>Data Cleaning</li>
+
+        <li>Categorical Encoding</li>
+
+        <li>Feature Transformation</li>
+
+        <li>Machine Learning Ready Dataset</li>
+      </ul>
     </div>
   </div>
 </section>
-
 <!-- ==================================================
      KDD PROCESS
 ================================================== -->
@@ -249,8 +222,8 @@
   </h2>
 
   <p class="text-center text-muted fs-5">
-    The project follows the KDD methodology to transform raw customer data into
-    a Machine Learning prediction model.
+    The project follows the KDD methodology for converting customer data into an
+    intelligent prediction model.
   </p>
 
   <div class="text-center my-5">
@@ -261,270 +234,162 @@
   </div>
 
   <div class="row g-4">
-    {% for title, desc in [ ("Data Selection", "Customer information was
-    collected from the Buy Computer dataset."), ("Data Preprocessing", "Dataset
-    quality was checked before training the Machine Learning models."), ("Data
-    Transformation", "Categorical values were converted into numerical format
-    for algorithm processing."), ("Data Mining", "Different Machine Learning
-    algorithms were applied and evaluated."), ("Evaluation", "The models were
-    compared using several performance measurements.") ] %}
-
     <div class="col-md-4">
-      <div class="card h-100 border-0 shadow-sm rounded-4">
+      <div class="card h-100 shadow-sm border-0 rounded-4">
         <div class="card-body">
-          <h5 class="fw-bold text-primary">{{ title }}</h5>
+          <h5 class="fw-bold text-primary">Data Selection</h5>
 
-          <p>{{ desc }}</p>
+          <p>Customer dataset was collected for machine learning analysis.</p>
         </div>
       </div>
     </div>
 
-    {% endfor %}
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm border-0 rounded-4">
+        <div class="card-body">
+          <h5 class="fw-bold text-primary">Data Preprocessing</h5>
+
+          <p>Missing values, categorical data, and features were prepared.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm border-0 rounded-4">
+        <div class="card-body">
+          <h5 class="fw-bold text-primary">Data Mining</h5>
+
+          <p>Machine Learning algorithms were trained and evaluated.</p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- ==================================================
-     ORANGE DATA MINING
-================================================== -->
-
-<section class="container-fluid py-5">
-  <div class="row align-items-center g-5">
-    <div class="col-md-6">
-      <h2 class="fw-bold">Orange Data Mining Workflow</h2>
-
-      <p class="fs-5 text-muted">
-        Orange Data Mining was used to visually create the Machine Learning
-        workflow and compare multiple algorithms.
-      </p>
-
-      <p>The workflow includes:</p>
-
-      <ul>
-        <li>Dataset Loading</li>
-
-        <li>Model Training</li>
-
-        <li>Algorithm Comparison</li>
-
-        <li>Test and Score Evaluation</li>
-
-        <li>Prediction Testing</li>
-      </ul>
-    </div>
-
-    <div class="col-md-6">
-      <img
-        src="{{ url_for('static', filename='images/orange_workflow.jpeg') }}"
-        class="img-fluid rounded-4 shadow"
-      />
-    </div>
-  </div>
-</section>
-<!-- ==================================================
-     MACHINE LEARNING MODEL RESULTS
+     MACHINE LEARNING EVALUATION
 ================================================== -->
 
 <section class="container-fluid py-5">
   <h2 class="fw-bold mb-4">Machine Learning Model Evaluation Results</h2>
 
   <p class="fs-5 text-muted">
-    Different Machine Learning algorithms were evaluated using Orange Data
-    Mining. The purpose of testing multiple algorithms is to determine how each
-    model performs in predicting customer buying behavior.
+    Multiple classification algorithms were evaluated to determine their
+    prediction performance.
   </p>
 
-  <!-- METRIC EXPLANATION -->
-
-  <h3 class="fw-bold mt-5 mb-4">Evaluation Metrics</h3>
-
-  <div class="row g-4">
-    {% for title, description in [ ("AUC (Area Under Curve)", "Measures how
-    effectively the model separates different prediction classes."), ("CA
-    (Classification Accuracy)", "Measures the percentage of correct predictions
-    produced by the model."), ("F1 Score", "Balances Precision and Recall into
-    one overall performance measurement."), ("Precision", "Measures how many
-    predicted positive results are actually correct."), ("Recall", "Measures how
-    many actual positive results were successfully identified."), ("MCC",
-    "Measures overall classification performance considering all prediction
-    outcomes.") ] %}
-
-    <div class="col-md-4">
-      <div class="card h-100 border-0 shadow-sm rounded-4">
-        <div class="card-body">
-          <h5 class="fw-bold text-primary">{{ title }}</h5>
-
-          <p class="text-muted">{{ description }}</p>
-        </div>
-      </div>
-    </div>
-
-    {% endfor %}
-  </div>
-
-  <!-- RESULT TABLE -->
-
-  <h3 class="fw-bold mt-5 mb-4">Orange Test and Score Results</h3>
-
-  <table class="table table-bordered table-hover bg-white shadow-sm">
-    <thead class="table-primary text-center">
+  <table class="table table-bordered table-hover shadow-sm text-center">
+    <thead class="table-primary">
       <tr>
         <th>Model</th>
+
         <th>AUC</th>
+
         <th>CA</th>
+
         <th>F1</th>
+
         <th>Precision</th>
+
         <th>Recall</th>
+
         <th>MCC</th>
       </tr>
     </thead>
 
-    <tbody class="text-center">
+    <tbody>
       <tr>
         <td>kNN</td>
+
         <td>0.4333</td>
+
         <td>0.5714</td>
+
         <td>0.4675</td>
+
         <td>0.3956</td>
+
         <td>0.5714</td>
+
         <td>-0.2067</td>
       </tr>
 
       <tr>
         <td>Logistic Regression</td>
+
         <td>0.4889</td>
+
         <td>0.5714</td>
+
         <td>0.5714</td>
+
         <td>0.5714</td>
+
         <td>0.5714</td>
+
         <td>0.0667</td>
       </tr>
 
       <tr>
         <td>Naive Bayes</td>
+
         <td>0.4000</td>
+
         <td>0.4286</td>
+
         <td>0.4405</td>
+
         <td>0.4694</td>
+
         <td>0.4286</td>
+
         <td>-0.1491</td>
       </tr>
 
-      <tr>
+      <tr class="table-success fw-bold">
         <td>Random Forest</td>
-        <td>0.1111</td>
-        <td>0.3571</td>
-        <td>0.3675</td>
-        <td>0.3810</td>
-        <td>0.3571</td>
-        <td>-0.3443</td>
+
+        <td colspan="6">Selected Implementation Model</td>
       </tr>
 
       <tr>
         <td>SVM</td>
+
         <td>0.3778</td>
+
         <td>0.6429</td>
+
         <td>0.5031</td>
+
         <td>0.4133</td>
+
         <td>0.6429</td>
+
         <td>0</td>
       </tr>
 
       <tr>
         <td>Decision Tree</td>
+
         <td>0.3000</td>
+
         <td>0.2143</td>
+
         <td>0.1941</td>
+
         <td>0.2321</td>
+
         <td>0.2143</td>
+
         <td>-0.5185</td>
       </tr>
     </tbody>
   </table>
 
   <div class="alert alert-info">
-    Based on the experiment results, Support Vector Machine achieved the highest
-    classification accuracy, while Logistic Regression produced the most
-    balanced performance based on F1 Score and MCC. Random Forest was selected
-    for the implementation stage to demonstrate an ensemble learning approach,
-    model exporting, and integration into a Flask-based prediction system.
-  </div>
-</section>
-
-<!-- ==================================================
-     MODEL INTERPRETATION
-================================================== -->
-
-<section class="container-fluid py-5">
-  <h2 class="fw-bold mb-4">Result Interpretation</h2>
-
-  <div class="accordion" id="resultAccordion">
-    <!-- SVM -->
-
-    <div class="accordion-item">
-      <h2 class="accordion-header">
-        <button
-          class="accordion-button"
-          data-bs-toggle="collapse"
-          data-bs-target="#svm"
-        >
-          Support Vector Machine (SVM)
-        </button>
-      </h2>
-
-      <div id="svm" class="accordion-collapse collapse show">
-        <div class="accordion-body">
-          SVM achieved the highest Classification Accuracy (CA) of 64.29%. This
-          means it produced the highest number of correct predictions among the
-          tested algorithms.
-        </div>
-      </div>
-    </div>
-
-    <!-- LOGISTIC -->
-
-    <div class="accordion-item">
-      <h2 class="accordion-header">
-        <button
-          class="accordion-button collapsed"
-          data-bs-toggle="collapse"
-          data-bs-target="#logistic"
-        >
-          Logistic Regression
-        </button>
-      </h2>
-
-      <div id="logistic" class="accordion-collapse collapse">
-        <div class="accordion-body">
-          Logistic Regression achieved the highest F1 Score and MCC value,
-          indicating a better balance between correct predictions and
-          classification reliability.
-        </div>
-      </div>
-    </div>
-
-    <!-- RANDOM FOREST -->
-
-    <div class="accordion-item">
-      <h2 class="accordion-header">
-        <button
-          class="accordion-button collapsed"
-          data-bs-toggle="collapse"
-          data-bs-target="#random"
-        >
-          Random Forest
-        </button>
-      </h2>
-
-      <div id="random" class="accordion-collapse collapse">
-        <div class="accordion-body">
-          Random Forest combines multiple decision trees to generate
-          predictions. Although the evaluation score was lower in this small
-          dataset, it demonstrates an important real-world AI concept: ensemble
-          learning. The trained Random Forest model was exported as a .pkl file
-          and integrated into the Flask application.
-        </div>
-      </div>
-    </div>
+    Random Forest was selected as the final implementation model because it
+    demonstrates ensemble learning and allows deployment as a reusable machine
+    learning model file.
   </div>
 </section>
 
@@ -533,44 +398,36 @@
 ================================================== -->
 
 <section class="container-fluid py-5">
-  <div class="row align-items-center g-5">
-    <div class="col-md-5">
-      <img
-        src="{{ url_for('static', filename='images/colab.jpeg') }}"
-        class="img-fluid rounded-4 shadow"
-      />
-    </div>
+  <h2 class="fw-bold mb-4">Google Colab Model Development</h2>
 
-    <div class="col-md-7">
-      <h2 class="fw-bold">Google Colab Model Development</h2>
+  <div class="alert alert-primary text-center fw-bold">
+    Load Customer Dataset
 
-      <p class="fs-5 text-muted">
-        Google Colab was used to implement the Machine Learning model using
-        Python.
-      </p>
+    <br />↓<br />
 
-      <div class="alert alert-primary text-center fw-bold">
-        Load Dataset
+    Feature Preprocessing
 
-        <br />↓<br />
+    <br />↓<br />
 
-        Train Random Forest
+    Train Random Forest Classifier
 
-        <br />↓<br />
+    <br />↓<br />
 
-        Evaluate Model
+    Evaluate Model
 
-        <br />↓<br />
+    <br />↓<br />
 
-        Export buy_computer_model.pkl
-      </div>
+    Export buy_computer_model.pkl
 
-      <p>
-        The exported pickle file stores the trained model and allows Flask to
-        reuse the model without retraining.
-      </p>
-    </div>
+    <br />↓<br />
+
+    Flask AI Integration
   </div>
+
+  <p class="fs-5 text-muted">
+    The exported pickle model allows the web application to perform predictions
+    without retraining the model.
+  </p>
 </section>
 
 <!-- ==================================================
@@ -578,17 +435,27 @@
 ================================================== -->
 
 <section class="container-fluid py-5">
-  <h2 class="fw-bold text-center mb-5">System Integration Architecture</h2>
+  <h2 class="fw-bold text-center mb-5">
+    Predictive Analytics System Architecture
+  </h2>
 
   <div class="text-center">
     <img
-      src="{{ url_for('static', filename='images/architecture.jpeg') }}"
+      src="{{ url_for('static', filename='images/predictivearchitecture.jpeg') }}"
       class="img-fluid rounded-4 shadow"
     />
   </div>
 
   <div class="alert alert-success text-center fw-bold mt-5">
-    HTML / CSS / JavaScript
+    Customer Input
+
+    <br />
+
+    Age • Income • Student Status • Credit Rating
+
+    <br />↓<br />
+
+    HTML / CSS / JavaScript Interface
 
     <br />↓<br />
 
@@ -596,15 +463,39 @@
 
     <br />↓<br />
 
-    Machine Learning Model (.pkl)
+    Feature Encoding Layer
 
     <br />↓<br />
 
-    Prediction Result
+    Random Forest Classifier
+
+    <br />
+
+    buy_computer_model.pkl
 
     <br />↓<br />
 
-    Gemini AI Explanation
+    Prediction Output
+
+    <br />
+
+    Will Buy Computer / Will Not Buy Computer
+
+    <br />↓<br />
+
+    Gemini AI Interpreter
+
+    <br />
+
+    +
+
+    <br />
+
+    Local Researcher AI Fallback
+
+    <br />↓<br />
+
+    Human-like Explanation
   </div>
 </section>
 
@@ -613,15 +504,20 @@
 ================================================== -->
 
 <section class="container-fluid py-5">
-  <div class="card border-0 shadow-sm rounded-4">
+  <div class="card shadow-sm border-0 rounded-4">
     <div class="card-body text-center p-5">
-      <h2 class="fw-bold">From Data Into Intelligent Prediction</h2>
+      <h2 class="fw-bold">From Customer Data Into Intelligent Prediction</h2>
 
       <p class="fs-5 text-muted">
-        This project demonstrates the complete Artificial Intelligence
-        integration process: data preparation, machine learning experimentation,
-        model creation, deployment, and integration into a web-based intelligent
-        system.
+        This Predictive Analytics application demonstrates the complete
+        Artificial Intelligence development process including dataset
+        preparation, Machine Learning experimentation, Random Forest
+        classification, Flask deployment, and Generative AI interpretation.
+      </p>
+
+      <p class="fs-5 text-muted">
+        The system transforms customer information into intelligent decision
+        support by providing prediction results with human-like AI explanations.
       </p>
     </div>
   </div>
