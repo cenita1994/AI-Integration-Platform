@@ -2,6 +2,7 @@ import os
 import pickle
 
 from tensorflow.keras.models import load_model
+
 from tensorflow.keras.applications import MobileNetV2
 
 from sklearn.neighbors import NearestNeighbors
@@ -29,7 +30,7 @@ PROFILE_PATH = os.path.join(
 
 
 # ===============================
-# LOAD CNN MODEL
+# LOAD CLASSIFICATION MODEL
 # ===============================
 
 cnn_model = load_model(
@@ -39,10 +40,12 @@ cnn_model = load_model(
 
 
 # ===============================
-# FEATURE EXTRACTOR
+# LOAD SIMILARITY FEATURE MODEL
+# IMPORTANT:
+# Must output 1280 features
 # ===============================
 
-feature_extractor = MobileNetV2(
+similarity_extractor = MobileNetV2(
 
     weights="imagenet",
 
@@ -64,9 +67,7 @@ with open(
     "rb"
 ) as file:
 
-    similarity_profile = pickle.load(
-        file
-    )
+    similarity_profile = pickle.load(file)
 
 
 THRESHOLD = similarity_profile[
@@ -101,4 +102,8 @@ print("Vision Loaded")
 print("Model:", MODEL_PATH)
 print("Similarity Validation: Enabled")
 print("Threshold:", THRESHOLD)
+print(
+    "Similarity Extractor Output:",
+    similarity_extractor.output_shape
+)
 print("====================")

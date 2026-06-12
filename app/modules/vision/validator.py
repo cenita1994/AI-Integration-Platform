@@ -1,18 +1,36 @@
-import numpy as np
+# ===============================
+# IMAGE SIMILARITY VALIDATOR
+# MobileNetV2 Feature Validation
+# ===============================
 
 
 from .model_loader import (
 
-    feature_extractor,
+    similarity_extractor,
 
     neighbor_model
 
 )
 
 
-def check_similarity(img_array):
+# ===============================
+# CHECK IMAGE SIMILARITY
+# ===============================
 
-    features = feature_extractor.predict(
+
+def check_similarity(
+
+    img_array
+
+):
+
+    # ===============================
+    # EXTRACT IMAGE FEATURES
+    # MobileNetV2 OUTPUT = 1280
+    # ===============================
+
+
+    image_features = similarity_extractor.predict(
 
         img_array,
 
@@ -20,26 +38,38 @@ def check_similarity(img_array):
 
     )
 
-    distances, indexes = (
 
-        neighbor_model.kneighbors(
+    print(
 
-            features
+        "Extracted Feature Shape:",
 
-        )
-
-    )
-
-    average_distance = np.mean(
-
-        distances
+        image_features.shape
 
     )
 
-    similarity = (
 
-        1 - average_distance
+    # ===============================
+    # NEAREST NEIGHBOR COMPARISON
+    # ===============================
+
+
+    distances, indexes = neighbor_model.kneighbors(
+
+        image_features
 
     )
 
-    return similarity
+
+    # ===============================
+    # CONVERT DISTANCE TO SIMILARITY
+    # ===============================
+
+
+    similarity_score = (
+
+        1 - distances.mean()
+
+    )
+
+
+    return similarity_score
